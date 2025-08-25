@@ -128,7 +128,7 @@ button1.MouseButton1Click:Connect(function()
 	button1.Text = success and "Loaded!" or "Failed!"
 	if not success then warn("[Kuni Hub] Error: " .. tostring(err)) end
 	wait(2)
-	button1.Text = "Run Dark Spawner"
+	button1.Text = "Run PetDuplicator"
 	button1.BackgroundTransparency = 0
 end)
 -- Button 2
