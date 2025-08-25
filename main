@@ -162,17 +162,17 @@ button3.MouseButton1Click:Connect(function()
 end)
 
 -- Button 4
-local button4 = createButton(frame, 146, "Open Egg Detector")
+local button4 = createButton(frame, 146, "Open Egg Reroller")
 button4.MouseButton1Click:Connect(function()
     button4.Text = "Loading..."
     button4.BackgroundTransparency = 0.5
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/KuniDevLua/GrowAGarden/refs/heads/main/EGG%20DETECTOR1"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zynxrm/EggRandomizer/refs/heads/main/main"))()
     end)
     button4.Text = success and "Loaded!" or "Failed!"
     if not success then warn("[Kuni Hub] Error: "..tostring(err)) end
     wait(2)
-    button4.Text = "Open Egg Detector"
+    button4.Text = "Open Egg Reroller"
     button4.BackgroundTransparency = 0
 end)
 
