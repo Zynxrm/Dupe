@@ -1,11 +1,10 @@
-
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local player = Players.LocalPlayer
 
 -- GUI setup
 local gui = Instance.new("ScreenGui")
-gui.Name = "ZysumePremiumGui"
+gui.Name = "KuniHubPremiumGUI"
 gui.ResetOnSpawn = false
 gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 gui.Parent = player:WaitForChild("PlayerGui")
@@ -68,7 +67,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1, -70, 0, 32)
 title.Position = UDim2.new(0, 10, 0, 10)
 title.BackgroundTransparency = 1
-title.Text = "ZysumeLibrary"
+title.Text = "Yawi Library"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.Font = Enum.Font.GothamBlack
 title.TextSize = 22
@@ -81,7 +80,7 @@ local footer = Instance.new("TextLabel")
 footer.Size = UDim2.new(1, 0, 0, 16)
 footer.Position = UDim2.new(0, 0, 1, -20)
 footer.BackgroundTransparency = 1
-footer.Text = "Do Not Leak"
+footer.Text = "Tiktok: @yawiyawiyawiz1"
 footer.TextColor3 = Color3.fromRGB(160, 160, 160)
 footer.Font = Enum.Font.Gotham
 footer.TextSize = 12
@@ -118,10 +117,36 @@ local function createButton(parent, posY, text)
     return btn
 end
 
+-- Button 1: Pet Dupe
+local button1 = createButton(frame, 50, "Run PetDuplicator")
+button1.MouseButton1Click:Connect(function()
+	button1.Text = "Loading..."
+	button1.BackgroundTransparency = 0.5
+	local success, err = pcall(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Zynxrm/PetDupelua/refs/heads/main/main"))()
+	end)
+	button1.Text = success and "Loaded!" or "Failed!"
+	if not success then warn("[Kuni Hub] Error: " .. tostring(err)) end
+	wait(2)
+	button1.Text = "Run Dark Spawner"
+	button1.BackgroundTransparency = 0
+end)
+-- Button 2
+local button2 = createButton(frame, 82, "Run Project Reverse")
+button2.MouseButton1Click:Connect(function()
+    button2.Text = "Loading..."
+    button2.BackgroundTransparency = 0.5
+    local success, err = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/veryimportantrr/x/refs/heads/main/gag_visual.lua", true))("discord.gg/csxu2nCkw9")
+    end)
+    button2.Text = success and "Loaded!" or "Failed!"
+    if not success then warn("[Kuni Hub] Error: "..tostring(err)) end
+    wait(2)
+    button2.Text = "Run Project Reverse"
+    button2.BackgroundTransparency = 0
+end)
 
-
-
--- Button 1
+-- Button 3
 local button3 = createButton(frame, 114, "Run Yawi X Hub")
 button3.MouseButton1Click:Connect(function()
     button3.Text = "Loading..."
@@ -136,7 +161,7 @@ button3.MouseButton1Click:Connect(function()
     button3.BackgroundTransparency = 0
 end)
 
--- Button 2
+-- Button 4
 local button4 = createButton(frame, 146, "Open Egg Detector")
 button4.MouseButton1Click:Connect(function()
     button4.Text = "Loading..."
@@ -151,7 +176,7 @@ button4.MouseButton1Click:Connect(function()
     button4.BackgroundTransparency = 0
 end)
 
--- Button 3: Run Pet Weight Changer
+-- Button 5: Run Pet Weight Changer
 local button5 = createButton(frame, 178, "Run Pet Weight Changer")
 button5.MouseButton1Click:Connect(function()
     button5.Text = "Loading..."
@@ -233,4 +258,3 @@ frame.InputChanged:Connect(function(input)
                                    startPos.Y.Scale, startPos.Y.Offset + delta.Y)
     end
 end)
-
