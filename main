@@ -132,17 +132,17 @@ button1.MouseButton1Click:Connect(function()
 	button1.BackgroundTransparency = 0
 end)
 -- Button 2
-local button2 = createButton(frame, 82, "Run Project Reverse")
+local button2 = createButton(frame, 82, "Run Trade Freezer")
 button2.MouseButton1Click:Connect(function()
     button2.Text = "Loading..."
     button2.BackgroundTransparency = 0.5
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/veryimportantrr/x/refs/heads/main/gag_visual.lua", true))("discord.gg/csxu2nCkw9")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zynxrm/TradeFreezer/refs/heads/main/main"))()
     end)
     button2.Text = success and "Loaded!" or "Failed!"
     if not success then warn("[Kuni Hub] Error: "..tostring(err)) end
     wait(2)
-    button2.Text = "Run Project Reverse"
+    button2.Text = "Run Trade Freezer"
     button2.BackgroundTransparency = 0
 end)
 
