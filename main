@@ -147,17 +147,17 @@ button2.MouseButton1Click:Connect(function()
 end)
 
 -- Button 3
-local button3 = createButton(frame, 114, "Run Yawi X Hub")
+local button3 = createButton(frame, 114, "Pet Mutation Reroller")
 button3.MouseButton1Click:Connect(function()
     button3.Text = "Loading..."
     button3.BackgroundTransparency = 0.5
     local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/KuniDevLua/GrowAGarden/refs/heads/main/FullFeaturesObsa"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zynxrm/PetMutationRandomizerr/refs/heads/main/main"))()
     end)
     button3.Text = success and "Loaded!" or "Failed!"
     if not success then warn("[Kuni Hub] Error: "..tostring(err)) end
     wait(2)
-    button3.Text = "Run Yawi X Hub"
+    button3.Text = "Run Pet Mutation Reroller"
     button3.BackgroundTransparency = 0
 end)
 
